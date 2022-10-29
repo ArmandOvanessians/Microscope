@@ -3,6 +3,7 @@ import numpy as np
 import os,sys
 from matplotlib import pyplot as plt
 
+# Generate random 5 points on stained images - in segementation area
 def process(img_gray):
     # img_gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     # img_canny = cv2.Canny(img_gray, 12, 54)

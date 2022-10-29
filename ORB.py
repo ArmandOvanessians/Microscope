@@ -9,7 +9,7 @@ import cv2 as cv
 from skimage.transform import resize
 from PIL import Image, ImageOps
 
-
+# Image registration
 # Resize the image
 def img_resize(data,new_shape = [480, 1024]):
     '''

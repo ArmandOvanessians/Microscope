@@ -2,6 +2,7 @@ import cv2
 import os
 import numpy as np
 
+# Use homography matrix to project points on stained image to unstained image
 def project(homography, point):
     scale = lambda x: np.array((x[0],x[1],1)).reshape((3,1))
     point = list(map(scale, point))
@@ -39,6 +40,10 @@ def load_data(path =r'C:\Users\Armand Ovanessians\Microscope\ORB\Data\data_s_us\
                     cv2.circle(img_moving, (i[0], i[1]), 20, (0, 0, 255), -1)
                 save_path = f"{path}/point_moved.jpg"
                 cv2.imwrite(save_path, img_moving)
+
+                point = tuple([x[1], x[0]] for x in point)
+                np.save(f'{path}/moving_point.npy', point)
+
 
 
 if __name__ == '__main__':
